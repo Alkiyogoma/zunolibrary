@@ -6,86 +6,72 @@
     <title>Laravel Inertia App</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
-    <style>
-      
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    .b-example-divider {
-      height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-    }
-
-    .bi {
-      vertical-align: -.125em;
-      fill: currentColor;
-    }
-
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .form-control-dark {
-        border-color: var(--bs-gray);
-      }
-      .form-control-dark:focus {
-        border-color: #fff;
-        box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
-      }
-      
-      Link{
-        color:#fff;
-      }
-      .text-small {
-        font-size: 85%;
-      }
-      
-      .dropdown-toggle {
-        outline: 0;
-      }
-      
-    </style>
-        @inertiaHead
-
+    @inertiaHead
   </head>
   <body>
-
+  
 
     @inertia
+<!-- Remove the container if you want to extend the Footer to full width. -->
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white" style="background-color: #218579">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
 
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              <img src="/library.png" width="18" alt="">
+              <a class="text-white" style="text-decoration: none;" href="https://zunocarbon.com/"> <i>Zuno Library</i> </a>
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 ml-lg-0 text-center text-md-end">
+          Copyright {{ date('Y')}} Zuno Carbon. All Rights Reserved.
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
   </body>
+  <!-- <script>
+		$('#recipeCarousel').carousel({
+        interval: 1000
+    })
+
+    $('.carousel .carousel-item').each(function() {
+        var minPerSlide = 4;
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+
+        for (var i = 0; i < minPerSlide; i++) {
+            next = next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
+	</script> -->
 </html>

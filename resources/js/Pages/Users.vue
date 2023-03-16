@@ -1,5 +1,5 @@
 <template>
-    <Nav />
+    
     <div class="container-fluid">
         <div class="row">
           <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -56,10 +56,7 @@
 
 <script>
 import Nav from "../Shared/Nav.vue";
-import DataTable from 'datatables.net-vue3'
-import DataTablesLib from 'datatables.net';
  
-DataTable.use(DataTablesLib);
 
 export default {
     components: { Nav },

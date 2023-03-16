@@ -1,7 +1,7 @@
 <template>
 
     <h1>Hello, {{ name }} {{ phone }}!</h1>
-    <Nav />
+    
 </template>
 
 <script>

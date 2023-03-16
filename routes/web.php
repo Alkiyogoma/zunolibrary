@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
-use \App\Http\Controllers\UsersController;
+use \App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +15,6 @@ use \App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return inertia('Site');
-});
 
 Route::get('/dashboard', function () {
     return inertia('Dashboard');
@@ -44,17 +41,19 @@ Route::get('/users', function () {
     ]);
 });
 
-Route::get('user/{contact}/edit', [UsersController::class, 'edit_customer'])->name('contacts.edit');
-Route::get('messages', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('names', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('contacts', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('groups', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('invoices', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('week', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('month', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('year', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('last', [UsersController::class, 'address'])->name('contacts.edit');
-Route::get('integretions', [UsersController::class, 'address'])->name('contacts.edit');
+Route::get('user/{contact}/edit', [BookController::class, 'edit_customer'])->name('contacts.edit');
+Route::any('/', [BookController::class, 'index'])->name('contacts.edit');
+Route::get('/home', [BookController::class, 'index'])->name('contacts.edit');
+Route::get('messages', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('names', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('contacts', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('groups', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('invoices', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('week', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('month', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('year', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('last', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('integretions', [BookController::class, 'address'])->name('contacts.edit');
 
 Route::post('/logouts', function () {
     dd('Logout page visited');
@@ -73,4 +72,3 @@ Route::get('/web', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

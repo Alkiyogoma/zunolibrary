@@ -1,112 +1,394 @@
 <template>
   <Nav />
-    <h1 class="visually-hidden">Heroes examples</h1>
-
-    <div class="px-4 py-5 my-5 text-center">
-        <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-        <h1 class="display-5 fw-bold">Centered hero</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Link href="/" class="btn btn-primary btn-lg px-4 gap-3">Primary button</Link>
-            <Link href="/web" class="btn btn-outline-secondary btn-lg px-4">Secondary</Link>
+  <main style="background-color: #EAE6D7;">
+    <div class="container col-xxl-8 px-4">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="/books.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300" height="200"
+            loading="lazy">
         </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Get Your Favourite <br> books All in One Place</h1>
+          <div class="d-grid gap-2 mt-4 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-secondary round-6 btn-lg px-4 me-md-2">View Categories</button>
+            <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+          </div>
         </div>
-    </div>
-  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
-        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
       </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+      <h3 class="mt-4 fw-bold lh-1 mb-3">
+        <vue-feather type="gift"></vue-feather>
+        Hot Reads
+      </h3>
+
+
+      <!-- Carousel -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
+                    alt="Sunset Over the Sea" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-          <hr class="my-4">
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-        </form>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next"
+          style=" border-radius: 50%; height: 50px; width: 50px; margin-top: 10em; background-color: #f1f1f1;  color: black;">
+          <!-- <span class="carousel-control-next-icon"></span> -->
+          <vue-feather type="arrow-right"></vue-feather>
+        </a>
+      </div>
+    </div>
+  </main>
+  <div class="py-5 bg-light">
+    <!-- Carousel wrapper -->
+    <div class="container px-4 py-5">
+      <div class="input-group">
+        <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+          <option selected>All Categories</option>
+          <option v-for="item in categories" :key="item.id" value="1">{{ item.Description }}</option>
+        </select>
+        <input type="text" class="form-control" v-model="form.search" placeholder="Find the book you like."
+          aria-label="Text input with 2 dropdown buttons">
+        <button class="btn btn-outline-secondary" type="button">Search
+        </button>
+
       </div>
     </div>
   </div>
-  
-  <div class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom">Features with title <font-awesome-icon icon="phone" /></h2>
+<!-- 
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">Dropdown</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action before</a></li>
+          <li><a class="dropdown-item" href="#">Another action before</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul> -->
 
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="d-flex flex-column align-items-start gap-2">
-        <h3 class="fw-bold">Left-aligned title explaining these awesome features</h3>
-        <p class="text-muted">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="btn btn-primary btn-lg">Primary button</a>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 g-4">
-        <div class="d-flex flex-column gap-2">
-          <div
-            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-            <svg class="bi" width="1em" height="1em">
-              <use xlink:href="#collection" />
+  <div class="album py-5">
+    <!-- Carousel wrapper -->
+    <div class="container">
+      <h3 class="mt-4 fw-bold px-2"><vue-feather type="book-open" size="21"></vue-feather>Book Shelf</h3>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div v-for="contact in books.data" :key="contact.id" class="col-lg-2 col-md-3 col-sm-2 rounded-5">
+          <div class="card shadow-sm" @click="selectItem(contact.id)">
+            <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%" height="250"
+              fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book-Cover"
+              preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" />
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Book Cover</text>
             </svg>
           </div>
-          <h4 class="fw-semibold mb-0">Featured title</h4>
-          <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-        </div>
-
-        <div class="d-flex flex-column gap-2">
-          <div
-            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-            <font-awesome-icon icon="phone" />
-          </div>
-          <h4 class="fw-semibold mb-0">Featured title</h4>
-          <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-        </div>
-
-        <div class="d-flex flex-column gap-2">
-          <div
-            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-            <svg class="bi" width="1em" height="1em">
-              <use xlink:href="#speedometer" />
-            </svg>
-          </div>
-          <h4 class="fw-semibold mb-0">Featured title</h4>
-          <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-        </div>
-
-        <div class="d-flex flex-column gap-2">
-          <div
-            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-            <svg class="bi" width="1em" height="1em">
-              <use xlink:href="#table" />
-            </svg>
-          </div>
-          <h4 class="fw-semibold mb-0">Featured title</h4>
-          <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
+          <p> <strong>{{ contact.Title }}...</strong> <br> {{ contact.Author }}<br>
+            <vue-feather type="star" stroke="red" size="14" fill="red"></vue-feather>
+            <strong>  5.0</strong></p>
         </div>
       </div>
     </div>
+    
+    <div>
+    <ul>
+      <li v-for="(item, index) in items" :key="index" @click="selectItem(index)">
+        {{ item }}
+      </li>
+    </ul>
+    <div v-if="selectedItem !== null">
+      <button @click="showPopup = true">Show Popup</button>
+      <div v-if="showPopup">
+        <div class="popup-overlay"></div>
+        <div class="popup">
+          <div class="card">
+            <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%" height="250"
+              fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book-Cover"
+              preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" />
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Book Cover</text>
+            </svg>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                  </div>
+          </div>
+          <h2>Selected Item: {{ items[selectedItem] }}</h2>
+          <button @click="showPopup = false">Close Popup</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
+
 <script>
-import Nav from '../Shared/Nav.vue';
+import Nav from '../Shared/NavBar.vue';
+import { Head, Link } from '@inertiajs/vue3'
+import pickBy from 'lodash/pickBy'
+import throttle from 'lodash/throttle'
+import mapValues from 'lodash/mapValues'
+import SearchFilter from '../Shared/SearchFilter'
+import Pagination from '../Shared/Pagination'
 
 export default {
-    components: { Nav },
-    props: {
-        name: String,
-        phone: String,
-        email: String,
-    }
-};
+  components: {
+    Head,
+    Link,
+    Nav,
+    Pagination,
+    SearchFilter,
+  },
+  props: {
+    filters: Object,
+    books: Object,
+    categories: Object,
+    total_student: Number,
+    type: String,
+  },
+  data() {
+    return {
+      form: {
+        search: this.filters.search,
+        trashed: this.filters.trashed,
+      },
+      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+      selectedItem: null,
+      showPopup: false,
+   }
+  },
+  watch: {
+    form: {
+      deep: true,
+      handler: throttle(function () {
+        this.$inertia.post(window.location.href, pickBy(this.form), { preserveState: true })
+      }, 150),
+    },
+  },
+  methods: {
+    reset() {
+      this.form = mapValues(this.form, () => null)
+    },
+    selectItem(index) {
+      this.selectedItem = index;
+      showPopup: true;
+    },
+  },
+}
 </script>
+
+
+<style>
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  width: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+}
+</style>
