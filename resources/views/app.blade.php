@@ -9,7 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <style>
+      body{
+        font-family: 'gill sans', sans-serif;
+      }
+    </style>
     @inertiaHead
   </head>
   <body>
@@ -18,7 +22,7 @@
     @inertia
 <!-- Remove the container if you want to extend the Footer to full width. -->
   <!-- Footer -->
-  <footer class="text-center text-lg-start text-white" style="background-color: #218579">
+  <footer class="text-center text-lg-start text-white" style="background-color: #1C3F3A">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Links -->

@@ -19,7 +19,32 @@ class BookController extends Controller
             'categories' => \App\Models\MediaType::get(),
             'books' => \App\Models\Media::orderBy('PublicationYear')
                 ->filter(Request::only('search', 'trashed'))
-                ->paginate(10)
+                ->paginate(50)
+                ->withQueryString()
+                ->through(fn ($contact) => [
+                    'BibNum' => $contact->BibNum,
+                    'Title' => substr($contact->Title, 0, 15),
+                    'name' => $contact->Title,
+                    'Author' => $contact->Author == null ? '-' : $contact->Author,
+                    'ISBN' => $contact->ISBN,
+                    'PublicationYear' => $contact->PublicationYear,
+                    'Publisher' => $contact->Publisher,
+                    'Subjects' => $contact->Subjects,
+                    'ItemType' => $contact->ItemType,
+                    'ItemCount' => $contact->ItemCount,
+                    'id' => $contact->deleted_at,
+                ]),
+        ]);
+    }
+
+    public function home()
+    {
+        return Inertia::render('Home', [
+            'filters' => Request::all('search', 'trashed'),
+            'categories' => \App\Models\MediaType::get(),
+            'books' => \App\Models\Media::orderBy('PublicationYear')
+                ->filter(Request::only('search', 'trashed'))
+                ->paginate(50)
                 ->withQueryString()
                 ->through(fn ($contact) => [
                     'BibNum' => $contact->BibNum,

@@ -1,104 +1,158 @@
 <template>
-<div class="container text-center my-3">
-    <h2 class="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
-    <div class="row mx-auto my-auto">
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=1">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=2">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=3">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=4">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=5">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="http://placehold.it/380?text=6">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+    <Nav />
+    <div class="bg-light">
+      <!-- Carousel wrapper -->
+      <div class="container px-4 py-5">
+        <div class="input-group">
+          <select class="form-select form-select-lg" style="width: 50px !important;" aria-label=".form-select-lg example">
+            <option selected>All Categories</option>
+            <option v-for="item in categories" :key="item.id" value="1">{{ item.Description }}</option>
+          </select>
+          <input type="text" class="form-control" v-model="form.search" placeholder="Find the book you like."
+            aria-label="Text input with 2 dropdown buttons">
+          <button class="btn btn-secondary">Search
+            <vue-feather type="search" size="12"></vue-feather>
+          </button>
         </div>
+      </div>
     </div>
-    <h5 class="mt-2">Advances one slide at a time</h5>
-</div>
-</template>
 
-<script>
-
-</script>
-
-<style scoped>
-@media (max-width: 768px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
-    }
-    
-    .carousel-inner .carousel-item-left.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
-    }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
-}
-
-
-</style>
+    <div class="album">
+      <!-- Carousel wrapper -->
+      <div class="container">
+        <h5 class="mt-4 fw-bold px-2"><vue-feather type="book-open" size="17"></vue-feather>Book Shelf</h5>
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div v-for="(contact, index) in books.data" :key="index" @click="selectItem(contact)"
+            class="col-lg-2 col-md-3 col-sm-2 rounded-5">
+            <div class="card shadow-sm" @click="selectItem(contact.id)">
+              <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%" height="250"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book-Cover"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>{{ contact.name }}</title>
+                <rect width="100%" height="100%" fill="#F8F8F8" />
+                <text x="50%" y="50%" fill="#ccc" dy=".8em">Book</text>
+                <text x="50%" y="57%" fill="#ccc" dy=".8em"> Cover</text>
+              </svg>
+            </div>
+            <p> <strong>{{ contact.Title }}...</strong> <br> {{ contact.Author }}<br>
+              <vue-feather type="star" stroke="red" size="14" fill="red"></vue-feather>
+              <strong> 5.0</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div v-if="selectedItem !== null">
+        <div class="popup-overlay"></div>
+        <div class="popup">
+          <div class="card p-2">
+            <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%" height="150"
+              fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book-Cover"
+              preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#EAE6D7" />
+              <text x="50%" y="50%" fill="#ccc" dy=".3em">Book</text>
+              <text x="50%" y="57%" fill="#F8F8F8" dy=".3em"> Cover</text>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">{{ selectedItem.name }}</h5>
+              <p class="card-text">
+                {{ selectedItem.Description }}
+              </p>
+              <hr>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  {{ selectedItem.Author }}
+                </div>
+                <small class="text-muted">{{ selectedItem.Publisher }}</small>
+              </div>
+              <div class="card-footer">
+                <button @click="selectedItem = null" class="btn btn-warning">Close</button>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  
+  <script>
+  import Nav from '../Shared/NavBar.vue';
+  import { Head, Link } from '@inertiajs/vue3'
+  import pickBy from 'lodash/pickBy'
+  import throttle from 'lodash/throttle'
+  import mapValues from 'lodash/mapValues'
+  import SearchFilter from '../Shared/SearchFilter'
+  import Pagination from '../Shared/Pagination'
+  
+  export default {
+    components: {
+      Head,
+      Link,
+      Nav,
+      Pagination,
+      SearchFilter,
+    },
+    props: {
+      filters: Object,
+      books: Object,
+      categories: Object,
+      total_student: Number,
+      type: String,
+    },
+    data() {
+      return {
+        form: {
+          search: this.filters.search,
+          trashed: this.filters.trashed,
+        },
+        items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+        selectedItem: null,
+      }
+    },
+    watch: {
+      form: {
+        deep: true,
+        handler: throttle(function () {
+          this.$inertia.get(window.location.href, pickBy(this.form), { preserveState: true })
+        }, 150),
+      },
+    },
+    methods: {
+      reset() {
+        this.form = mapValues(this.form, () => null)
+      },
+      selectItem(index) {
+        this.selectedItem = index;
+      },
+    },
+  }
+  </script>
+  
+  <style scoped>
+  body {
+    font-family: 'Gill Sans', sans-serif;
+  }
+  
+  .popup-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    width: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+  }</style>

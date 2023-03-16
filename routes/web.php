@@ -43,8 +43,8 @@ Route::get('/users', function () {
 
 Route::get('user/{contact}/edit', [BookController::class, 'edit_customer'])->name('contacts.edit');
 Route::any('/', [BookController::class, 'index'])->name('contacts.edit');
-Route::get('/home', [BookController::class, 'index'])->name('contacts.edit');
-Route::get('messages', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('/home', [BookController::class, 'home'])->name('contacts.edit');
+Route::get('popular', [BookController::class, 'home'])->name('contacts.edit');
 Route::get('names', [BookController::class, 'address'])->name('contacts.edit');
 Route::get('contacts', [BookController::class, 'address'])->name('contacts.edit');
 Route::get('groups', [BookController::class, 'address'])->name('contacts.edit');
