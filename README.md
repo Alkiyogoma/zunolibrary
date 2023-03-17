@@ -24,12 +24,13 @@ composer update
 
 Once you have your server-side framework configured, you then need to setup your client-side framework.
 
-Install NPM packages, run:
+Install NPM packages and all required Node js dependecies, run:
 
 ```bash
 npm install
 ```
-and it will install all required Node js dependecies.
+
+Run Laravel Mix that provides a fluent API for defining Webpack to compile and minify your application CSS and JavaScript files.
 
 ```bash
 npx mix
