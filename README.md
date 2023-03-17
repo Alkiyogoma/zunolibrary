@@ -33,6 +33,7 @@ and it will install all required Node js dependecies.
 
 ```bash
 npx mix
+```
 
 - Import database *zunolibrary.sql* file to your Mysql database
 
@@ -56,6 +57,6 @@ To use your app, open your browser and go to http://localhost:8000/
 - MYSQL
 - InertiaJs
 
-## Visit Site
+## Visit Live Site
 
-- **[Zuno Library UI site ](https://zunolibrary.darsms.co.tz/)**
+- **[Zuno Library UI site ](https://zunolibrary.cospins.com/)** at https://zunolibrary.cospins.com
