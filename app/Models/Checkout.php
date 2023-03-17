@@ -26,9 +26,9 @@ class Checkout extends Model
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
             $query->where(function ($query) use ($search) {
-                $query->where(DB::raw('lower(name)'), 'like', '%'.strtolower($search).'%')
-				->orWhere(DB::raw('lower(phone)'), 'like', '%'.strtolower($search).'%')
-				->orWhere(DB::raw('lower(branch)'), 'like', '%'.strtolower($search).'%');
+                $query->where(DB::raw('lower(ItemBarcode)'), 'like', '%'.strtolower($search).'%')
+				->orWhere(DB::raw('lower(ItemType)'), 'like', '%'.strtolower($search).'%')
+				->orWhere(DB::raw('lower(CallNumber)'), 'like', '%'.strtolower($search).'%');
             });
         })->when($filters['trashed'] ?? null, function ($query, $trashed) {
             if ($trashed === 'with') {

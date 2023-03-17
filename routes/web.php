@@ -45,15 +45,9 @@ Route::get('user/{contact}/edit', [BookController::class, 'edit_customer'])->nam
 Route::any('/', [BookController::class, 'index'])->name('contacts.edit');
 Route::get('/home', [BookController::class, 'home'])->name('contacts.edit');
 Route::get('popular', [BookController::class, 'home'])->name('contacts.edit');
-Route::get('names', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('contacts', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('groups', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('invoices', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('week', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('month', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('year', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('last', [BookController::class, 'address'])->name('contacts.edit');
-Route::get('integretions', [BookController::class, 'address'])->name('contacts.edit');
+Route::get('category', [BookController::class, 'category'])->name('contacts.category');
+Route::get('checkouts', [BookController::class, 'bookcategory'])->name('contacts.bookcategory');
+Route::get('bookcategory/{id}/book', [BookController::class, 'bookcategory'])->name('bookcategory');
 
 Route::post('/logouts', function () {
     dd('Logout page visited');

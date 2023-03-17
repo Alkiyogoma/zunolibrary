@@ -3,15 +3,15 @@
   <main style="background-color: #EAE6D7; height: 500px;">
     <div class="container col-xxl-8 px-4 mb-4">
       <div class="row g-5">
-        <div class="col-lg-6 py-6 ">
-          <h1 class="mt-5">Get Your Favourite <br> books All in One Place</h1>
-          <div class="d-grid gap-2 mt-1 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-secondary round-6 btn-lg px-4 me-md-2">View Categories</button>
+        <div class="col-lg-6 col-md-6 col-sm-6 py-6 ">
+          <h1 class="mt-5">Get Your Favourite <br> books all in one place</h1>
+          <div class="d-grid gap-2 mt-4 d-md-flex justify-content-md-start">
+            <a type="button" href="/category" class="btn btn-secondary round-6 btn-lg px-4 mb-4 me-md-2">View Categories</a>
             <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
           </div>
         </div>
-        <div class="col-10 col-sm-8 col-lg-6">
-          <img src="/books.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="300" height="150"
+        <div class="col-md-6 col-sm-6 col-lg-6">
+          <img src="/study.png" class="d-block mx-lg-auto img-fluid" alt="Zuno Library" width="300" height="180"
             loading="lazy">
         </div>
        
@@ -19,9 +19,9 @@
     </div>
   </main>
 
-  <div class="container" style="margin-top: -220px;">
-    
-    <h3 class="mt-4 fw-bold lh-1 mb-3">
+  <div class="container" style="margin-top: -230px;">
+    <br>
+    <h3 class="mt-4 fw-bold lh-1 mb-3"> 
         <vue-feather type="gift"></vue-feather>
         Hot Reads
       </h3>
@@ -32,176 +32,49 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-sm-3">
-                <div class="card shadow-sm" @click="selectItem(contact.id)">
+              
+              <div v-for="book in hots.data" :key="book.id" class="col-sm-3">
+                <div class="card shadow-sm" @click="selectItem(book.id)">
+                  <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%"
+                    height="350" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Placeholder: Book-Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>{{ book.name }}</title>
+                    <rect width="100%" height="100%" fill="#F8F8F8" />
+                    <text x="50%" y="50%" fill="#ccc" dy="1.3em">Book</text>
+                    <text x="50%" y="57%" fill="#ccc" dy="1.3em"> Cover</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div v-for="book in hots.data" :key="book.id" class="col-sm-3">
+                <div class="card shadow-sm" @click="selectItem(book.id)">
+                  <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%"
+                    height="350" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="Placeholder: Book-Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>{{ book.name }}</title>
+                    <rect width="100%" height="100%" fill="#F8F8F8" />
+                    <text x="50%" y="50%" fill="#ccc" dy="1.3em">Book</text>
+                    <text x="50%" y="57%" fill="#ccc" dy="1.3em"> Cover</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div v-for="book in hots.data" :key="book.id" class="col-sm-3">
+                <div class="card shadow-sm" @click="selectItem(book.id)">
                   <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%"
                     height="350" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"
                     aria-label="Placeholder: Book-Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#F8F8F8" />
                     <text x="50%" y="50%" fill="#ccc" dy=".3em">Book</text>
-<text x="50%" y="57%" fill="#ccc" dy=".3em"> Cover</text>
+                    <text x="50%" y="57%" fill="#ccc" dy=".3em"> Cover</text>
                   </svg>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card shadow-sm" @click="selectItem(contact.id)">
-                  <svg class="bd-placeholder-img card-img-top" style="background-color: #F8F8F8;" width="100%"
-                    height="350" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img"
-                    aria-label="Placeholder: Book-Cover" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#EAE6D7" />
-                    <text x="50%" y="50%" fill="#ccc" dy=".3em">Book</text>
-<text x="50%" y="57%" fill="#ccc" dy=".3em"> Cover</text>
-                  </svg>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="card">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp" class="card-img-top"
-                    alt="Sunset Over the Sea" />
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk
-                      of the card's content.
-                    </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -211,15 +84,16 @@
         <!-- Left and right controls -->
 
         <a class="carousel-control-next" href="#myCarousel" data-slide="next"
-          style=" border-radius: 50%; height: 50px; width: 50px; margin-top: 10em; background-color: #f1f1f1;  color: black;">
+          style="margin-left: 3em; border-radius: 50%; height: 50px; width: 50px; margin-top: 10em; background-color: #ffffff;  color: black;">
           <!-- <span class="carousel-control-next-icon"></span> -->
           <vue-feather type="arrow-right"></vue-feather>
         </a>
       </div>
   </div>
-  <div class="bg-light">
-    <!-- Carousel wrapper -->
-    <div class="container px-4 py-5">
+
+  <div class="album py-4">
+    <!-- Search Box  -->
+    <div class="container px-4 py-3">
       <div class="input-group">
         <select class="form-select form-select-lg" style="width: 50px !important;" aria-label=".form-select-lg example">
           <option selected>All Categories</option>
@@ -232,12 +106,10 @@
         </button>
       </div>
     </div>
-  </div>
 
-  <div class="album py-5">
     <!-- Carousel wrapper -->
     <div class="container">
-      <h5 class="mt-4 fw-bold px-2"><vue-feather type="book-open" size="17"></vue-feather>Book Shelf</h5>
+      <h5 class="mt-4 fw-bold px-2"><vue-feather type="book-open" size="17"></vue-feather> <span class="p2">Book Shelf</span> </h5>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div v-for="(contact, index) in books.data" :key="index" @click="selectItem(contact)"
@@ -276,7 +148,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ selectedItem.name }}</h5>
             <p class="card-text">
-              {{ selectedItem.Description }}
+              {{ selectedItem.BibNum }}
             </p>
             <hr>
             <div class="d-flex justify-content-between align-items-center">
@@ -317,6 +189,7 @@ export default {
   props: {
     filters: Object,
     books: Object,
+    hots: Object,
     categories: Object,
     total_student: Number,
     type: String,
@@ -362,6 +235,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: indigo;
 }
 
 .popup {

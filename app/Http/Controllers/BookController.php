@@ -34,6 +34,25 @@ class BookController extends Controller
                     'ItemCount' => $contact->ItemCount,
                     'id' => $contact->deleted_at,
                 ]),
+                'hots' => \App\Models\Media::orderBy('PublicationYear')
+                ->filter(Request::only('search', 'trashed'))
+                ->paginate(4)
+                ->withQueryString()
+                ->through(fn ($contact) => [
+                    'BibNum' => $contact->BibNum,
+                    'Title' => substr($contact->Title, 0, 15),
+                    'name' => $contact->Title,
+                    'Author' => $contact->Author == null ? '-' : $contact->Author,
+                    'ISBN' => $contact->ISBN,
+                    'PublicationYear' => $contact->PublicationYear,
+                    'Publisher' => $contact->Publisher,
+                    'Subjects' => $contact->Subjects,
+                    'ItemType' => $contact->ItemType,
+                    'ItemCount' => $contact->ItemCount,
+                    'id' => $contact->deleted_at,
+                ]),
+                'url' => 'home'
+
         ]);
     }
 
@@ -59,6 +78,52 @@ class BookController extends Controller
                     'ItemCount' => $contact->ItemCount,
                     'id' => $contact->deleted_at,
                 ]),
+                'url' => 'popular'
+
+        ]);
+    }
+
+
+    
+    public function category()
+    {
+        return Inertia::render('Category', [
+            'filters' => Request::all('search', 'trashed'),
+            'categories' => \App\Models\MediaType::filter(Request::only('search', 'trashed'))
+                ->paginate(10)
+                ->withQueryString()
+                ->through(fn ($contact) => [
+                    'id' => $contact->id,
+                    'Code' => $contact->Code,
+                    'Description' => $contact->Description,
+                    'Code_Type' => $contact->Code_Type == null ? '-' : $contact->Code_Type,
+                    'Format_Group' => $contact->Format_Group,
+                    'Format_Subgroup' => $contact->Format_Subgroup,
+                    'books' => $contact->types->count(),
+                    'Category_Subgroup' => $contact->Category_Subgroup,
+                ]),
+                'url' => 'category'
+        ]);
+    }
+
+    public function bookcategory()
+    {
+        return Inertia::render('Book', [
+            'filters' => Request::all('search', 'trashed'),
+            'categories' => \App\Models\Checkout::orderBy('CheckoutDateTime')
+                ->filter(Request::only('search', 'trashed'))
+                ->paginate(10)
+                ->withQueryString()
+                ->through(fn ($contact) => [
+                    'BibNum' => $contact->BibNum,
+                    'BibNumber' => $contact->BibNumber,
+                    'ItemBarcode' => $contact->ItemBarcode,
+                    'ItemType' => $contact->ItemType,
+                    'CallNumber' => $contact->CallNumber,
+                    'CheckoutDateTime' => $contact->CheckoutDateTime
+                ]),
+                'url' => 'book'
+
         ]);
     }
 

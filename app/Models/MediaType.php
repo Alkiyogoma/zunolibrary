@@ -27,14 +27,17 @@ class MediaType extends Model
 		'Category_Subgroup'
 	];
 
+	public function types(){
+		return $this->hasMany(Media::class, 'ItemType', 'Code');
+	}
 	
 	public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
             $query->where(function ($query) use ($search) {
-                $query->where(DB::raw('lower(name)'), 'like', '%'.strtolower($search).'%')
-				->orWhere(DB::raw('lower(phone)'), 'like', '%'.strtolower($search).'%')
-				->orWhere(DB::raw('lower(branch)'), 'like', '%'.strtolower($search).'%');
+                $query->where(DB::raw('lower(Code)'), 'like', '%'.strtolower($search).'%')
+				->orWhere(DB::raw('lower(Description)'), 'like', '%'.strtolower($search).'%')
+				->orWhere(DB::raw('lower(Format_Group)'), 'like', '%'.strtolower($search).'%');
             });
         })->when($filters['trashed'] ?? null, function ($query, $trashed) {
             if ($trashed === 'with') {

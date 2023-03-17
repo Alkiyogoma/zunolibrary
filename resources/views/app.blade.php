@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <title>Laravel Inertia App</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="/library.png">
+    <link rel="icon" type="image/png" href="/library.png">
+    <title>Zuno Library Site</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,11 +15,41 @@
       body{
         font-family: 'gill sans', sans-serif;
       }
+      .isActive{
+          border-radius: 20px;  background-color: #f1f1f1;  color: black;
+        }
     </style>
     @inertiaHead
   </head>
   <body>
-  
+  <header class="p-3" style="background-color: #EAE6D7;">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center px-6 justify-content-center justify-content-lg-start" tyle="margin-left: 2em; font-weight: bold; margin-right: 2em;">
+            <img src="/library.png" width="18" alt="">
+              <a style="text-decoration: none; color: #000000; font-weight: bolder; margin-left: .5em;" href="/"> <i>Zuno Library</i> </a>
+              
+        <!-- <a href="/" class="d-flex align-items-center mb-2mb-lg-0 text-dark text-decoration-none">
+            <i>Zuno Library</i>
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a> -->
+        <?php
+          $url = request()->segment(1);
+        ?>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 5em;">
+          <li><a href="/" class="nav-link px-3 link-secondary {{ $url == '' ? 'isActive' : '' }}">Home</a></li>
+          <li><a href="/category" class="nav-link px-3 link-dark {{ $url == 'category' ? 'isActive' : '' }}"">Category</a></li>
+          <li><a href="/popular" class="nav-link px-3 link-dark {{ $url == 'popular' ? 'isActive' : '' }}"">Popular</a></li>
+          <li><a href="/checkouts" class="nav-link px-3 link-dark {{ $url == 'checkouts' ? 'isActive' : '' }}"">My Picks</a></li>
+        </ul>
+
+        <ul class="nav mb-md-0 text-end" style="float: right;">
+          <li><a href="/checkouts" class="nav-link px-1 mt-1 link-dark">  <vue-feather type="shopping-bag" size="20" ></vue-feather></a></li>
+          <li><a href="#" class="nav-link px-3 link-dark"><img src="https://github.com/mdo.png" alt="mdo" width="20" height="20" class="rounded-circle"></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
 
     @inertia
 <!-- Remove the container if you want to extend the Footer to full width. -->
@@ -34,7 +66,7 @@
           <div class="col-md-5 col-lg-4 text-center text-md-start">
             <!-- Copyright -->
             <div class="p-3">
-              <img src="/library.png" width="18" alt="">
+              <img src="/library.png" width="18" alt="zunolibrary">
               <a class="text-white" style="text-decoration: none;" href="https://zunocarbon.com/"> <i>Zuno Library</i> </a>
             </div>
             <!-- Copyright -->

@@ -32,7 +32,10 @@ class Media extends Model
 		'ItemCount'
 	];
 
-	
+	public function types(){
+		return $this->belongsTo(Media::class, 'ItemType', 'Code');
+	}
+
 	public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
