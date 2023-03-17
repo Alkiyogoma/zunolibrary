@@ -22253,7 +22253,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   },
   href: "/"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", null, "Zuno Library")], -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0\" style=\"margin-left:3em;\"><li><a href=\"#\" style=\"border-radius:20px;background-color:#f1f1f1;color:black;\" class=\"nav-link px-3 link-secondary\">Home</a></li><li><a href=\"/category\" class=\"nav-link px-3 link-dark\">Category</a></li><li><a href=\"/popular\" class=\"nav-link px-3 link-dark\">Popular</a></li><li><a href=\"/checkouts\" class=\"nav-link px-3 link-dark\">My Picks</a></li></ul>", 1);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<ul class=\"nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0\" style=\"margin-left:3em;\"><li><a href=\"/\" style=\"border-radius:20px;background-color:#f1f1f1;color:black;\" class=\"nav-link px-3 link-secondary\">Home</a></li><li><a href=\"/category\" class=\"nav-link px-3 link-dark\">Category</a></li><li><a href=\"/popular\" class=\"nav-link px-3 link-dark\">Popular</a></li><li><a href=\"/checkouts\" class=\"nav-link px-3 link-dark\">My Picks</a></li></ul>", 1);
 var _hoisted_7 = {
   "class": "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
 };

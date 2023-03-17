@@ -11,7 +11,7 @@
         </a> -->
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 3em;">
-          <li><a href="#" style="border-radius: 20px;  background-color: #f1f1f1;  color: black;" class="nav-link px-3 link-secondary">Home</a></li>
+          <li><a href="/" style="border-radius: 20px;  background-color: #f1f1f1;  color: black;" class="nav-link px-3 link-secondary">Home</a></li>
           <li><a href="/category" class="nav-link px-3 link-dark">Category</a></li>
           <li><a href="/popular" class="nav-link px-3 link-dark">Popular</a></li>
           <li><a href="/checkouts" class="nav-link px-3 link-dark">My Picks</a></li>
