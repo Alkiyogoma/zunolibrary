@@ -43,7 +43,10 @@
         </ul>
 
         <ul class="nav mb-md-0 text-end" style="float: right;">
-          <li><a href="/checkouts" class="nav-link px-1 mt-1 link-dark">  <vue-feather type="shopping-bag" size="20" ></vue-feather></a></li>
+          <li><a href="/checkouts" class="nav-link px-1 mt-0 link-dark">  
+          <img src="/bag.svg" alt="mdo" width="20" height="20" class="" />
+        </a>
+          </li>
           <li><a href="#" class="nav-link px-3 link-dark"><img src="https://github.com/mdo.png" alt="mdo" width="20" height="20" class="rounded-circle"></a></li>
         </ul>
       </div>
