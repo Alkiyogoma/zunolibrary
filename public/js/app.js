@@ -22258,7 +22258,7 @@ var _hoisted_7 = {
   "class": "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
 };
 var _hoisted_8 = {
-  href: "#",
+  href: "/checkouts",
   style: {
     "margin-top": "12px"
   },

@@ -18,7 +18,7 @@
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <a href="#" style="margin-top: 12px;" class="d-block link-dark text-decoration-none">
+            <a href="/checkouts" style="margin-top: 12px;" class="d-block link-dark text-decoration-none">
                 <vue-feather type="shopping-bag" size="20" ></vue-feather>
             </a>
         </form>
